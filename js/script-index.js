@@ -104,7 +104,7 @@ function finalizar() {
     txtPuntaje.setAttribute("value", "");
     // console.log(puntajeMax)
     // console.log(puntaje)
-    if(puntaje > puntajeMax){
+    if (puntaje > puntajeMax) {
         txtPuntajeMax.setAttribute("value", `${puntaje}`);
         puntajeMax = puntaje;
     }
@@ -135,7 +135,7 @@ document.addEventListener("keypress", function (evt) {
         // jugadores.forEach((j) => {
         for (let j of jugadores) {
             // console.log(j.dataset.posicion)
-            if(pausa){
+            if (pausa) {
                 break;
             }
             if (j.dataset.posicion == 0 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)) {
@@ -156,10 +156,10 @@ document.addEventListener("keypress", function (evt) {
                 break;
             } else if (j.dataset.posicion == 0) {
                 // console.log(puntaje)
-                if(puntaje > 0){
+                if (puntaje > 0) {
                     puntaje = puntaje - 10;
                 }
-                
+
                 // console.log(puntaje)
                 txtPuntaje.setAttribute("value", `${puntaje}`);
                 break;
@@ -173,7 +173,7 @@ document.addEventListener("keypress", function (evt) {
     } else if (evt.key == "s") {
         // jugadores.forEach((j) => {
         for (let j of jugadores) {
-            if(pausa){
+            if (pausa) {
                 break;
             }
             if (j.dataset.posicion == 1 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)) {
@@ -195,12 +195,12 @@ document.addEventListener("keypress", function (evt) {
                 break;
             } else if (j.dataset.posicion == 1) {
                 // console.log(puntaje)
-                if(puntaje > 0){
+                if (puntaje > 0) {
                     puntaje = puntaje - 10;
                 }
                 // console.log(puntaje)
                 txtPuntaje.setAttribute("value", `${puntaje}`);
-                
+
                 break;
             }
         }
@@ -208,7 +208,7 @@ document.addEventListener("keypress", function (evt) {
     } else if (evt.key == "d") {
         // jugadores.forEach((j) => {
         for (let j of jugadores) {
-            if(pausa){
+            if (pausa) {
                 break;
             }
             if (j.dataset.posicion == 2 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)) {
@@ -230,12 +230,12 @@ document.addEventListener("keypress", function (evt) {
                 break;
             } else if (j.dataset.posicion == 2) {
                 // console.log(puntaje)
-                if(puntaje > 0){
+                if (puntaje > 0) {
                     puntaje = puntaje - 10;
                 }
                 // console.log(puntaje)
                 txtPuntaje.setAttribute("value", `${puntaje}`);
-                
+
                 break;
             }
         }
@@ -243,7 +243,7 @@ document.addEventListener("keypress", function (evt) {
     } else if (evt.key == "f") {
         // jugadores.forEach((j) => {
         for (let j of jugadores) {
-            if(pausa){
+            if (pausa) {
                 break;
             }
             if (j.dataset.posicion == 3 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)) {
@@ -265,12 +265,12 @@ document.addEventListener("keypress", function (evt) {
                 break;
             } else if (j.dataset.posicion == 3) {
                 // console.log(puntaje)
-                if(puntaje > 0){
+                if (puntaje > 0) {
                     puntaje = puntaje - 10;
                 }
                 // console.log(puntaje)
                 txtPuntaje.setAttribute("value", `${puntaje}`);
-                
+
                 break;
             }
         }
