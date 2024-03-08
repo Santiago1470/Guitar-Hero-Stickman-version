@@ -72,7 +72,7 @@ function iniciar() {
                 h.style.marginLeft = `${marginNueva}px`;
                 h.dataset.velocidad = marginNueva;
                 let contenedorJuegoAncho = contenedorJuego.clientWidth;
-                console.log(contenedorJuegoAncho)
+                // console.log(contenedorJuegoAncho)
                 if (marginActual > (contenedorJuegoAncho)) {
                     contenedorJuego.removeChild(h);
                 }
@@ -80,15 +80,16 @@ function iniciar() {
             });
         }, 10);
     }
-
+    pausa = false;
 }
 
 function pausar() {
     clearInterval(reproducir);
     clearInterval(mover);
     clicInciar = 0;
+    pausa = true;
 }
-
+var puntajeMax = 0;
 function finalizar() {
     clearInterval(reproducir);
     clearInterval(mover);
@@ -97,10 +98,23 @@ function finalizar() {
         contenedorJuego.removeChild(h);
     });
     clicInciar = 0;
+    let txtPuntajeMax = document.getElementById("txtPuntajeMaximo");
+    let txtPuntaje = document.getElementById("txtPuntaje");
+    // console.log(txtPuntaje.getAttribute("value"))
+    txtPuntaje.setAttribute("value", "");
+    // console.log(puntajeMax)
+    // console.log(puntaje)
+    if(puntaje > puntajeMax){
+        txtPuntajeMax.setAttribute("value", `${puntaje}`);
+        puntajeMax = puntaje;
+    }
+    puntaje = 0;
 }
 
 var llegadas = document.querySelectorAll(".llegada");
+
 var puntaje = 0;
+var pausa = false;
 document.addEventListener("keypress", function (evt) {
     let jugadores = document.querySelectorAll(".jugador");
     let contenedorJuegoAncho = contenedorJuego.clientWidth;
@@ -115,12 +129,17 @@ document.addEventListener("keypress", function (evt) {
     if (evt.key === "p") {
         finalizar();
     }
-    jugadores.forEach((j) => {
-    if(evt.key == "a"){
-        //  jugadores.forEach((j) => {
+
+    // jugadores.forEach((j) => {
+    if (evt.key == "a") {
+        // jugadores.forEach((j) => {
+        for (let j of jugadores) {
             // console.log(j.dataset.posicion)
-            if(j.dataset.posicion == 0 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)){
-                puntaje = 10 + puntaje;
+            if(pausa){
+                break;
+            }
+            if (j.dataset.posicion == 0 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)) {
+                puntaje = puntaje + 10;
                 txtPuntaje.setAttribute("value", `${puntaje}`);
                 audio.play()
                 let final = document.createElement("img");
@@ -134,18 +153,34 @@ document.addEventListener("keypress", function (evt) {
                 setTimeout(() => {
                     contenedorJuego.removeChild(final);
                 }, 500);
+                break;
+            } else if (j.dataset.posicion == 0) {
+                // console.log(puntaje)
+                if(puntaje > 0){
+                    puntaje = puntaje - 10;
+                }
+                
+                // console.log(puntaje)
+                txtPuntaje.setAttribute("value", `${puntaje}`);
+                break;
             }
-        //  })
+        }
+        // })
         // llegadas.item(0).classList.toggle('llegadaBtn');
-        
+
         // llegadas.item(0).style.backgroundColor = "black";
         // console.log(llegadas.item(0).style.backgroundColor)
-    } else if(evt.key == "s"){
-        if(j.dataset.posicion == 1 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)){
-            puntaje = 10 + puntaje;
-            txtPuntaje.setAttribute("value", `${puntaje}`);
-            audio.play()
-            let final = document.createElement("img");
+    } else if (evt.key == "s") {
+        // jugadores.forEach((j) => {
+        for (let j of jugadores) {
+            if(pausa){
+                break;
+            }
+            if (j.dataset.posicion == 1 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)) {
+                puntaje = puntaje + 10;
+                txtPuntaje.setAttribute("value", `${puntaje}`);
+                audio.play()
+                let final = document.createElement("img");
                 final.setAttribute("src", "imagenes/gif-jugador-fin3.gif");
                 final.setAttribute("width", "130px");
                 final.style.position = "absolute";
@@ -156,14 +191,31 @@ document.addEventListener("keypress", function (evt) {
                 setTimeout(() => {
                     contenedorJuego.removeChild(final);
                 }, 500);
-            contenedorJuego.removeChild(j);
+                contenedorJuego.removeChild(j);
+                break;
+            } else if (j.dataset.posicion == 1) {
+                // console.log(puntaje)
+                if(puntaje > 0){
+                    puntaje = puntaje - 10;
+                }
+                // console.log(puntaje)
+                txtPuntaje.setAttribute("value", `${puntaje}`);
+                
+                break;
+            }
         }
-    } else if(evt.key == "d"){
-        if(j.dataset.posicion == 2 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)){
-            puntaje = 10 + puntaje;
-            txtPuntaje.setAttribute("value", `${puntaje}`);
-            audio.play()
-            let final = document.createElement("img");
+        // })
+    } else if (evt.key == "d") {
+        // jugadores.forEach((j) => {
+        for (let j of jugadores) {
+            if(pausa){
+                break;
+            }
+            if (j.dataset.posicion == 2 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)) {
+                puntaje = puntaje + 10;
+                txtPuntaje.setAttribute("value", `${puntaje}`);
+                audio.play()
+                let final = document.createElement("img");
                 final.setAttribute("src", "imagenes/gif-jugador-fin3.gif");
                 final.setAttribute("width", "130px");
                 final.style.position = "absolute";
@@ -174,14 +226,31 @@ document.addEventListener("keypress", function (evt) {
                 setTimeout(() => {
                     contenedorJuego.removeChild(final);
                 }, 500);
-            contenedorJuego.removeChild(j);
+                contenedorJuego.removeChild(j);
+                break;
+            } else if (j.dataset.posicion == 2) {
+                // console.log(puntaje)
+                if(puntaje > 0){
+                    puntaje = puntaje - 10;
+                }
+                // console.log(puntaje)
+                txtPuntaje.setAttribute("value", `${puntaje}`);
+                
+                break;
+            }
         }
-    } else if(evt.key == "f"){
-        if(j.dataset.posicion == 3 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)){
-            puntaje = 10 + puntaje;
-            txtPuntaje.setAttribute("value", `${puntaje}`);
-            audio.play()
-            let final = document.createElement("img");
+        // })
+    } else if (evt.key == "f") {
+        // jugadores.forEach((j) => {
+        for (let j of jugadores) {
+            if(pausa){
+                break;
+            }
+            if (j.dataset.posicion == 3 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)) {
+                puntaje = puntaje + 10;
+                txtPuntaje.setAttribute("value", `${puntaje}`);
+                audio.play()
+                let final = document.createElement("img");
                 final.setAttribute("src", "imagenes/gif-jugador-fin3.gif");
                 final.setAttribute("width", "130px");
                 final.style.position = "absolute";
@@ -192,42 +261,55 @@ document.addEventListener("keypress", function (evt) {
                 setTimeout(() => {
                     contenedorJuego.removeChild(final);
                 }, 500);
-            contenedorJuego.removeChild(j);
+                contenedorJuego.removeChild(j);
+                break;
+            } else if (j.dataset.posicion == 3) {
+                // console.log(puntaje)
+                if(puntaje > 0){
+                    puntaje = puntaje - 10;
+                }
+                // console.log(puntaje)
+                txtPuntaje.setAttribute("value", `${puntaje}`);
+                
+                break;
+            }
         }
+        // })
     }
-    })
+    // })
+    vez = 0;
 })
 
 document.addEventListener("keydown", (evt) => {
-    
-    if(evt.key == "a"){
+
+    if (evt.key == "a") {
         llegadas.item(0).classList.toggle('llegadaBtn');
-        
+
         // llegadas.item(0).style.backgroundColor = "black";
         // console.log(llegadas.item(0).style.backgroundColor)
-    } else if(evt.key == "s"){
+    } else if (evt.key == "s") {
         llegadas.item(1).classList.toggle('llegadaBtn');
 
-    } else if(evt.key == "d"){
+    } else if (evt.key == "d") {
         llegadas.item(2).classList.toggle('llegadaBtn');
- 
-    } else if(evt.key == "f"){
+
+    } else if (evt.key == "f") {
         llegadas.item(3).classList.toggle('llegadaBtn');
 
     }
 })
 
 document.addEventListener("keyup", (evt) => {
-    if(evt.key == "a"){
+    if (evt.key == "a") {
         llegadas.item(0).classList.toggle('llegadaBtn');
-        
+
         // llegadas.item(0).style.backgroundColor = "black";
         // console.log(llegadas.item(0).style.backgroundColor)
-    } else if(evt.key == "s"){
+    } else if (evt.key == "s") {
         llegadas.item(1).classList.toggle('llegadaBtn');
-    } else if(evt.key == "d"){
+    } else if (evt.key == "d") {
         llegadas.item(2).classList.toggle('llegadaBtn');
-    } else if(evt.key == "f"){
+    } else if (evt.key == "f") {
         llegadas.item(3).classList.toggle('llegadaBtn');
     }
 })
