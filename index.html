@@ -1,11 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style-index.css">
+    <title>Guitar Hero</title>
 </head>
+
 <body>
-    as
+
+    <div class="contenedor">
+        <div class="contenedor-juego">
+            
+        </div>
+        <!-- <hr class="piso" style="top: 130px;">
+        <hr class="piso" style="top: 240px;">
+        <hr class="piso" style="top: 350px;"> -->
+        <div class="contenedor-llegada">
+            <div class="llegada" id="llegada-1">
+                <audio class="audio-bien" id="audio">
+                    <source type="audio/wav" src="imagenes/audio-bien12.mp3">
+                </audio>
+            </div>
+            <div class="llegada" id="llegada-2">
+
+            </div>
+            <div class="llegada" id="llegada-3">
+
+            </div>
+            <div class="llegada" id="llegada-4">
+
+            </div>
+        </div>
+        <div class="contenedor-datos">
+            <div class="contenedor-puntaje">
+                <h2>Puntaje Máximo:</h2>
+                <input type="text" name="" id="txtPuntajeMaximo" disabled="">
+                <h2>Puntaje:</h2>
+                <input type="text" name="" id="txtPuntaje" disabled="">
+            </div>
+            <div class="contenedor-btn">
+                <input type="button" value="Iniciar" onclick="iniciar()">
+                <input type="button" value="Pausar" onclick="pausar()">
+                <input type="button" value="Finalizar" onclick="finalizar()">
+            </div>
+        </div>
+    </div>
+    <script src="js/script-index.js"></script>
 </body>
+
 </html>

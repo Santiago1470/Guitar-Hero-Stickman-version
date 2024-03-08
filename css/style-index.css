@@ -1,0 +1,106 @@
+.contenedor {
+    display: flex;
+    height: 455px;
+}
+
+.contenedor-juego {
+    width: 70%;
+    border: 2px solid black;
+}
+
+.contenedor-juego img {
+    position: absolute;
+}
+
+.contenedor-juego hr {
+    position: absolute;
+    width: 70%;
+}
+
+/* #llegada-1, #llegada-2, #llegada-3, #llegada-4{
+    width: 60px;
+    height: 114px;
+    background-color: red;
+} */
+
+.llegada {
+    width: 60px;
+    height: 114px;
+    background-color: red;
+}
+
+/* .llegada:active{
+    background-color: black;
+} */
+.llegadaBtn {
+    animation-name: presionar;
+    animation-duration: 300ms;
+}
+
+/* transform: scale(.9);
+    transition: all 1000ms ease; 
+.llegadaBtnFin {
+    background-color: red;
+    transform: scale(1);
+    transition: all 1000ms ease;
+} */
+
+.jugador {
+    margin-left: 10px;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid black;
+    margin: 1px;
+}
+
+.contenedor-datos {
+    width: 30%;
+    border: 2px solid black;
+    /* display: inline-block; */
+    text-align: center;
+}
+
+.contenedor-puntaje {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.contenedor-puntaje input {
+    margin: auto 20px auto 2px;
+    /* border: none;
+    background-color: white; */
+}
+
+@keyframes presionar {
+    0% {
+        background-color: red;
+        transform: scale(1);
+        transition: all 300ms ease;
+    }
+
+    /* 25% {
+        background-color: black;
+        transform: scale(.95);
+        transition: all 1000ms ease;
+    } */
+
+    50% {
+        background-color: rgb(148, 0, 0);
+        transform: scale(.95);
+        transition: all 300ms ease;
+    }
+
+    /* 75%{
+        background-color: black;
+        transform: scale(.95);
+        transition: all 1000ms ease;
+    } */
+
+    100% {
+        background-color: red;
+        transform: scale(1);
+        transition: all 300ms ease;
+    }
+}
