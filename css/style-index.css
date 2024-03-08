@@ -27,6 +27,14 @@
     width: 60px;
     height: 114px;
     background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.llegada h3 {
+    margin: 0px;
+    color: rgb(213, 0, 0);
 }
 
 /* .llegada:active{
