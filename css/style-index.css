@@ -1,11 +1,29 @@
+:root {
+    --color-primario: white;
+    --color-sombra: white;
+}
+body{
+    background-image: url(https://wallpapers.com/images/high/plain-black-with-fine-beady-pattern-g3k7ji73js5ev6kq.webp);
+    background-size: cover;
+    min-height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
 .contenedor {
     display: flex;
-    height: 455px;
+    height: 100%;
+  
+}
+.contenedor2 {
+    display: flex;
+    justify-content: center;
+    border-radius: 15px; 
+    padding: 20px;
 }
 
 .contenedor-juego {
-    width: 70%;
-    border: 2px solid black;
+    width: 100%;
+    border: 2px solid white;
 }
 
 .contenedor-juego img {
@@ -13,45 +31,59 @@
 }
 
 .contenedor-juego hr {
-    position: absolute;
-    width: 70%;
+    position: flex;
+    width: 100%;
+    height: 113px;
 }
 
-/* #llegada-1, #llegada-2, #llegada-3, #llegada-4{
-    width: 60px;
-    height: 114px;
-    background-color: red;
-} */
 
 .llegada {
-    width: 60px;
-    height: 114px;
-    background-color: red;
+    width: 80px;
+    height: 112.5px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid white;
+    border-left: none;
+    
 }
+
+.llegada#llegada-1 {
+    background-color: #5DADE2;
+    --color-primario: #5DADE2;
+    --color-sombra: #5DADE2;
+}
+
+.llegada#llegada-2 {
+    background-color: #82E0AA ;
+    --color-primario: #82E0AA ;
+    --color-sombra: #82E0AA ;
+}
+
+.llegada#llegada-3 {
+    background-color: #D98880;
+    --color-primario: #D98880;
+    --color-sombra: #D98880;;
+}
+
+.llegada#llegada-4 {
+    background-color: #F7DC6F ;
+    --color-primario: #F7DC6F ;
+    --color-sombra: #F7DC6F ;
+}
+
 
 .llegada h3 {
     margin: 0px;
-    color: rgb(213, 0, 0);
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    text-shadow: 0 0 10px white, 0 0 40px white, 0 0 80px white;
 }
 
-/* .llegada:active{
-    background-color: black;
-} */
-.llegadaBtn {
-    animation-name: presionar;
-    animation-duration: 300ms;
+#tecla1 {
+    margin: 0px;
 }
-
-/* transform: scale(.9);
-    transition: all 1000ms ease; 
-.llegadaBtnFin {
-    background-color: red;
-    transform: scale(1);
-    transition: all 1000ms ease;
-} */
 
 .jugador {
     margin-left: 10px;
@@ -59,15 +91,16 @@
 
 hr {
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid white;
     margin: 1px;
 }
 
 .contenedor-datos {
     width: 30%;
-    border: 2px solid black;
-    /* display: inline-block; */
+    border: 2px solid white;
     text-align: center;
+    border-radius: 15px; 
+    padding: 20px;
 }
 
 .contenedor-puntaje {
@@ -77,38 +110,121 @@ hr {
 
 .contenedor-puntaje input {
     margin: auto 20px auto 2px;
-    /* border: none;
-    background-color: white; */
 }
+
+
 
 @keyframes presionar {
     0% {
-        background-color: red;
+        background-color: var(--color-primario);
+        box-shadow: 0 0 10px var(--color-sombra), 0 0 40px var(--color-sombra), 0 0 80px var(--color-sombra);
         transform: scale(1);
         transition: all 300ms ease;
     }
-
-    /* 25% {
-        background-color: black;
-        transform: scale(.95);
-        transition: all 1000ms ease;
-    } */
 
     50% {
-        background-color: rgb(148, 0, 0);
+        background-color: var(--color-primario);
+        box-shadow: 0 0 10px var(--color-sombra), 0 0 40px var(--color-sombra), 0 0 80px var(--color-sombra);
         transform: scale(.95);
         transition: all 300ms ease;
     }
 
-    /* 75%{
-        background-color: black;
-        transform: scale(.95);
-        transition: all 1000ms ease;
-    } */
-
     100% {
-        background-color: red;
+        background-color: var(--color-primario);
+        box-shadow: 0 0 10px var(----color-sombra), 0 0 40px var(--color-sombra), 0 0 80px var(--color-sombra);
         transform: scale(1);
         transition: all 300ms ease;
     }
+}
+.llegadaBtn {
+    animation-name: presionar;
+    animation-duration: 300ms;
+}
+.btn-success {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em; 
+    color: white; 
+    text-shadow: 0 0 10px white, 0 0 40px white, 0 0 80px white;
+    background-color: #28a745; 
+    color: #fff; 
+    border: 1px solid #28a745; 
+    padding: 10px 20px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.btn-success:hover {
+    background-color: #218838; 
+}
+
+.btn-success:active {
+    background-color: #1e7e34; 
+    border-color: #1e7e34;
+}
+.btn-warning {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em; 
+    color: white; 
+    text-shadow: 0 0 10px white, 0 0 40px white, 0 0 80px white;
+    background-color: #ffc107; 
+    color: white; 
+    border: 1px solid #ffc107; 
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+
+.btn-warning:active {
+    background-color: #c69400; 
+}
+
+.btn-danger {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em; 
+    color: white; 
+    text-shadow: 0 0 10px white, 0 0 40px white, 0 0 80px white;
+    background-color: #dc3545; 
+    color: #fff; 
+    border: 1px solid #dc3545;
+    padding: 10px 20px; 
+    border-radius: 4px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+
+.btn-danger:hover {
+    background-color: #c82333; 
+}
+
+
+.btn-danger:active {
+    background-color: #bd2130; 
+}
+
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em; 
+    color: white; 
+    text-shadow: 0 0 10px white, 0 0 40px white, 0 0 80px white;
+}
+#txtPuntaje{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em; 
+    color: white; 
+    text-shadow: 0 0 10px black, 0 0 40px black, 0 0 80px black;
+}
+#txtPuntajeMaximo{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em; 
+    color: white; 
+    text-shadow: 0 0 10px black, 0 0 40px black, 0 0 80px black;
 }

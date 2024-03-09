@@ -17,6 +17,16 @@ function crearJugadores() {
     // Math.random() * (10 - 1) + 1
     let carril = Math.floor(Math.random() * (5 - 1) + 1)
     img.dataset.posicion = carril - 1;
+    if (carril - 1 == 0) {
+        img.style.filter = "drop-shadow(10px 7px 10px #5DADE2)";
+    } else if (carril - 1 == 1) {
+        img.style.filter = "drop-shadow(10px 7px 10px #82E0AA )";
+    } else if (carril - 1 == 2) {
+        img.style.filter = "drop-shadow(10px 7px 10px #D98880)";
+    }
+    else if (carril - 1 == 3) {
+        img.style.filter = "drop-shadow(10px 7px 10px #F7DC6F)";
+    }
     img.style.top = posiciones[carril - 1];
     // console.log("Aqui va")
     // console.log(carril - 1)
@@ -61,7 +71,7 @@ function iniciar() {
     if (clicInciar == 1) {
         reproducir = setInterval(() => {
             crearJugadores();
-        }, 600);
+        }, 2000);
 
         mover = setInterval(() => {
             let hijos = document.querySelectorAll(".jugador");
@@ -108,7 +118,6 @@ function finalizar() {
         txtPuntajeMax.setAttribute("value", `${puntaje}`);
         puntajeMax = puntaje;
     }
-    puntaje = 0;
 }
 
 var llegadas = document.querySelectorAll(".llegada");
@@ -138,13 +147,14 @@ document.addEventListener("keypress", function (evt) {
             if (pausa) {
                 break;
             }
-            if (j.dataset.posicion == 0 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho - 70)) {
+            if (j.dataset.posicion == 0 && Math.floor(j.dataset.velocidad) > (contenedorJuegoAncho -70)) {
                 puntaje = puntaje + 10;
                 txtPuntaje.setAttribute("value", `${puntaje}`);
                 audio.play()
                 let final = document.createElement("img");
                 final.setAttribute("src", "imagenes/gif-jugador-fin3.gif");
                 final.setAttribute("width", "130px");
+                final.style.filter = "drop-shadow(10px 7px 10px #5DADE2)";
                 final.style.position = "absolute";
                 final.style.top = "-30px";
                 final.style.left = (j.dataset.velocidad + 150) + "px";
@@ -282,7 +292,7 @@ document.addEventListener("keypress", function (evt) {
 
 document.addEventListener("keydown", (evt) => {
 
-    if (evt.key == "a") {
+    if (evt.key === "a") {
         llegadas.item(0).classList.toggle('llegadaBtn');
 
         // llegadas.item(0).style.backgroundColor = "black";
