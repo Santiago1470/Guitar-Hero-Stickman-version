@@ -15,10 +15,10 @@ El link del juego, también puede ser encontrado en la sección de Deployments y
 
 Para jugar este juego, no necesita instalar nada adicional, todo lo necesario para que se pueda desplegar el juego correctamente está alojado en este repositorio.  
 
-¡A jugar!.
-
-
-
+¡A jugar!.  
+  
+  
+  
 Autores:
 Andres Felipe Patarroyo Muñoz
 Santiago Jair Torres Rivera
