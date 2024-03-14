@@ -71,14 +71,14 @@ function iniciar() {
     if (clicInciar == 1) {
         reproducir = setInterval(() => {
             crearJugadores();
-        }, 2000);
+        }, 1000);
 
         mover = setInterval(() => {
             let hijos = document.querySelectorAll(".jugador");
             hijos.forEach(h => {
                 let marginActual = parseInt(h.dataset.velocidad);
                 // console.log(typeof marginActual)
-                let marginNueva = marginActual + Math.random() * (10 - 1) + 1;
+                let marginNueva = marginActual + 7;
                 h.style.marginLeft = `${marginNueva}px`;
                 h.dataset.velocidad = marginNueva;
                 let contenedorJuegoAncho = contenedorJuego.clientWidth;
@@ -118,6 +118,7 @@ function finalizar() {
         txtPuntajeMax.setAttribute("value", `${puntaje}`);
         puntajeMax = puntaje;
     }
+    puntaje = 0;
 }
 
 var llegadas = document.querySelectorAll(".llegada");
@@ -201,7 +202,6 @@ document.addEventListener("keypress", function (evt) {
                 setTimeout(() => {
                     contenedorJuego.removeChild(final);
                 }, 500);
-                contenedorJuego.removeChild(j);
                 break;
             } else if (j.dataset.posicion == 1) {
                 // console.log(puntaje)
@@ -236,7 +236,6 @@ document.addEventListener("keypress", function (evt) {
                 setTimeout(() => {
                     contenedorJuego.removeChild(final);
                 }, 500);
-                contenedorJuego.removeChild(j);
                 break;
             } else if (j.dataset.posicion == 2) {
                 // console.log(puntaje)
@@ -271,7 +270,6 @@ document.addEventListener("keypress", function (evt) {
                 setTimeout(() => {
                     contenedorJuego.removeChild(final);
                 }, 500);
-                contenedorJuego.removeChild(j);
                 break;
             } else if (j.dataset.posicion == 3) {
                 // console.log(puntaje)

@@ -8,6 +8,7 @@ body{
     min-height: 90vh;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 .contenedor {
     display: flex;
@@ -110,6 +111,10 @@ hr {
 
 .contenedor-puntaje input {
     margin: auto 20px auto 2px;
+}
+
+.contenedor-puntaje .txt-puntaje {
+    width: 90%;
 }
 
 
