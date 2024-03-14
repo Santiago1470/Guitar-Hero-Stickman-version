@@ -194,6 +194,7 @@ document.addEventListener("keypress", function (evt) {
                 let final = document.createElement("img");
                 final.setAttribute("src", "imagenes/gif-jugador-fin3.gif");
                 final.setAttribute("width", "130px");
+                img.style.filter = "drop-shadow(10px 7px 10px #82E0AA )";
                 final.style.position = "absolute";
                 final.style.top = "90px";
                 final.style.left = (j.dataset.velocidad) + "px";
@@ -228,6 +229,7 @@ document.addEventListener("keypress", function (evt) {
                 let final = document.createElement("img");
                 final.setAttribute("src", "imagenes/gif-jugador-fin3.gif");
                 final.setAttribute("width", "130px");
+                img.style.filter = "drop-shadow(10px 7px 10px #D98880)";
                 final.style.position = "absolute";
                 final.style.top = "200px";
                 final.style.left = (j.dataset.velocidad) + "px";
@@ -262,6 +264,7 @@ document.addEventListener("keypress", function (evt) {
                 let final = document.createElement("img");
                 final.setAttribute("src", "imagenes/gif-jugador-fin3.gif");
                 final.setAttribute("width", "130px");
+                img.style.filter = "drop-shadow(10px 7px 10px #F7DC6F)";
                 final.style.position = "absolute";
                 final.style.top = "310px";
                 final.style.left = (j.dataset.velocidad) + "px";
