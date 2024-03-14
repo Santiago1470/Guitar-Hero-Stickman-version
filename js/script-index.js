@@ -71,7 +71,7 @@ function iniciar() {
     if (clicInciar == 1) {
         reproducir = setInterval(() => {
             crearJugadores();
-        }, 1000);
+        }, 900);
 
         mover = setInterval(() => {
             let hijos = document.querySelectorAll(".jugador");
