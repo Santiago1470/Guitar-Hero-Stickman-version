@@ -78,7 +78,7 @@ function iniciar() {
             hijos.forEach(h => {
                 let marginActual = parseInt(h.dataset.velocidad);
                 // console.log(typeof marginActual)
-                let marginNueva = marginActual + 7;
+                let marginNueva = marginActual + 6;
                 h.style.marginLeft = `${marginNueva}px`;
                 h.dataset.velocidad = marginNueva;
                 let contenedorJuegoAncho = contenedorJuego.clientWidth;
@@ -196,11 +196,11 @@ document.addEventListener("keypress", function (evt) {
                 final.setAttribute("width", "130px");
                 final.style.position = "absolute";
                 final.style.top = "90px";
-                final.style.left = (j.dataset.velocidad + 150) + "px";
+                final.style.left = (j.dataset.velocidad) + "px";
                 contenedorJuego.removeChild(j);
                 contenedorJuego.appendChild(final);
                 setTimeout(() => {
-                    contenedorJuego.removeChild(final);
+                    // contenedorJuego.removeChild(final);
                 }, 500);
                 break;
             } else if (j.dataset.posicion == 1) {
