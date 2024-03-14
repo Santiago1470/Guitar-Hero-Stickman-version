@@ -158,7 +158,7 @@ document.addEventListener("keypress", function (evt) {
                 final.style.filter = "drop-shadow(10px 7px 10px #5DADE2)";
                 final.style.position = "absolute";
                 final.style.top = "-30px";
-                final.style.left = (j.dataset.velocidad + 150) + "px";
+                final.style.left = (j.dataset.velocidad) + "px";
                 contenedorJuego.removeChild(j);
                 contenedorJuego.appendChild(final);
                 setTimeout(() => {
@@ -200,7 +200,7 @@ document.addEventListener("keypress", function (evt) {
                 contenedorJuego.removeChild(j);
                 contenedorJuego.appendChild(final);
                 setTimeout(() => {
-                    // contenedorJuego.removeChild(final);
+                    contenedorJuego.removeChild(final);
                 }, 500);
                 break;
             } else if (j.dataset.posicion == 1) {
@@ -230,7 +230,7 @@ document.addEventListener("keypress", function (evt) {
                 final.setAttribute("width", "130px");
                 final.style.position = "absolute";
                 final.style.top = "200px";
-                final.style.left = (j.dataset.velocidad + 150) + "px";
+                final.style.left = (j.dataset.velocidad) + "px";
                 contenedorJuego.removeChild(j);
                 contenedorJuego.appendChild(final);
                 setTimeout(() => {
@@ -264,7 +264,7 @@ document.addEventListener("keypress", function (evt) {
                 final.setAttribute("width", "130px");
                 final.style.position = "absolute";
                 final.style.top = "310px";
-                final.style.left = (j.dataset.velocidad + 150) + "px";
+                final.style.left = (j.dataset.velocidad) + "px";
                 contenedorJuego.removeChild(j);
                 contenedorJuego.appendChild(final);
                 setTimeout(() => {
