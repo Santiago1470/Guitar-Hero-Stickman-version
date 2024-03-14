@@ -3,7 +3,7 @@
     --color-sombra: white;
 }
 body{
-    background-image: url(https://wallpapers.com/images/high/plain-black-with-fine-beady-pattern-g3k7ji73js5ev6kq.webp);
+    background-image: url(../imagenes/bg.jpg);
     background-size: cover;
     min-height: 90vh;
     justify-content: center;
