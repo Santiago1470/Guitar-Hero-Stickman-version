@@ -3,7 +3,7 @@ Inspirado en el juego Guitar Hero, en este caso se realizó la versión del jueg
 # Instrucciones de uso
 Para empezar a jugar solo se debe abrir el link que proporciona GitHub para páginas web con HTML, CSS y JavaScript, este link es: https://santiago1470.github.io/Guitar-Hero-Stickman-version/  
 
-Una vez este en el sitio web del juego, debe dar clic en el botón "Inicio" o presionar la tecla "i".  
+Una vez esté en el sitio web del juego, debe dar clic en el botón "Inicio" o presionar la tecla "i".  
 Para pausar el juego, debe dar clic en el botón "Pausa" o presionar la tecla "o".
 Para finalizar la partida, debe dar clic en el botón "Finalizar" o presionar la tecla "p".  
 Para ganar puntos debe presionar las teclas "a", "s", "d", o "f", dependiendo del carril en el que se encuentre el personaje (Strickman) y debe presionar la tecla justo en el momento en el que el personaje se encuentre dentro de la zona demarcada, si presiona la tecla antes de que el personaje llegue a la zona demarcada perderá puntos y si lo hace después no perderá, pero si perderá la oportunidad de ganar puntos, cada vez que acierte ganará 10 puntos y cada vez que presione la tecla de un carril y en ese carril haya un personaje, también perderá puntos, pero si no hay personajes en el carril, sin importar cuántas veces presione la tecla de ese carril no perderá puntos.  
