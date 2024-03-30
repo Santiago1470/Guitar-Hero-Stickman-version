@@ -1,6 +1,7 @@
 # Guitar-Hero-Stickman-version
-Inspirado en el juego Guitar Hero, en este caso se realizó la versión del juego con stickman, otros sonidos, puntaje distinto, entre otros detalles estéticos y de jugabilidad distintos.
-# Instrucciones de uso
+## Descripción
+El juego que se desarrolló está inspirado en el juego famoso Guitar Hero, la temática del juego tiene similitudes al juego original, tanto en su forma peculiar visual como en la jugabilidad. Esta versión desarrollada es una versión stickman, es decir, no se usaron discos con los cuales se interactúan, sino que se usaron muñecos denominados stickman, los cuales están construidos con la forma de palo para el cuerpo y un circulo para la cabeza, adicionalmente, para la adaptación a la versión stickman, se cambiaron las cuerdas del juego original por la forma de carriles, de esta forma se identificará en que carril va corriendo el stickman y de acuerdo a ello, se usarán las respectivas teclas al momento en que el personaje llegue a la zona demarcada para interactuar. Finalmente, el sistema de puntuación se definió totalmente distinto al juego original, junto con los sonidos que son reproducidos al acertar en la zona demarcada y se agregó un conjunto de opciones para interactuar en la partida del juego sin la utilización de un menú antes de acceder al campo de juego.
+## Instrucciones de uso
 Para empezar a jugar solo se debe abrir el link que proporciona GitHub para páginas web con HTML, CSS y JavaScript, este link es: https://santiago1470.github.io/Guitar-Hero-Stickman-version/  
 
 Una vez esté en el sitio web del juego, debe dar clic en el botón "Inicio" o presionar la tecla "i".  
@@ -16,9 +17,11 @@ El link del juego, también puede ser encontrado en la sección de Deployments y
 Para jugar este juego, no necesita instalar nada adicional, todo lo necesario para que se pueda desplegar el juego correctamente está alojado en este repositorio.  
 
 ¡A jugar!.  
+
+## Tecnologías usadas
+* HTML y CSS para la maquetación, diseño y decoración de la página web
+* JavaScript para capturar y manejar los eventos provocados por el usuario
   
-  
-  
-Autores:
-Andres Felipe Patarroyo Muñoz
+## Autores
+Andres Felipe Patarroyo Muñoz  
 Santiago Jair Torres Rivera
